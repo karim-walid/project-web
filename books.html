@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <title>THE LIBRARY</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background: #f2f2f2;
+        }
+
+        * {
+            box-sizing: border-box;
+
+        }
+
+        :hover {
+            transition: .5s;
+        }
+
+        .container {
+
+            width: 100%;
+            height: 10%;
+            background-color: rgba(0, 0, 0, 1);
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+
+
+
+        .nav ul {
+            list-style-type: none;
+            margin-right: 10%;
+
+
+        }
+
+        .nav li {
+            margin-right: 35px;
+            float: left;
+        }
+
+        .nav li a {
+            display: block;
+            color: white;
+            text-align: center;
+
+            text-decoration: none;
+
+
+            font-size: 150%;
+            font-family: 'poppins', sans-serif;
+        }
+
+        .bar a:hover {
+
+            color: rgb(31, 195, 42);
+        }
+
+        .bar a:active {
+            background-color: rgb(74, 46, 59);
+        }
+
+        .bar a {
+            font-size: large;
+        }
+
+        .read {
+            font-weight: bolder;
+            font-size: 150%;
+            margin-left: 10%;
+            text-decoration: none;
+            color: white;
+        }
+
+        .read span {
+            color: rgb(31, 195, 42);
+        }
+
+        .icon {
+            margin-right: 15%;
+            display: none;
+
+            border: none;
+        }
+
+        .icon:hover {
+            cursor: pointer;
+        }
+
+        @media screen and (max-width : 1100px) {
+            .nav ul {
+                background-color: rgba(0, 0, 0, .2);
+                position: absolute;
+                width: 40%;
+                top: 100%;
+                right: 0px;
+                margin: 0;
+                padding: 0px;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                display: none;
+            }
+
+            .nav .bar li {
+                width: 100%;
+                padding: 20px;
+                display: block;
+
+            }
+
+            .icon {
+                display: block;
+            }
+
+            .container {
+                position: fixed !important;
+                width: 100%;
+                height: 10%;
+                background-color: rgba(0, 0, 0, .2) !important;
+
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                z-index: 10;
+
+            }
+
+        }
+
+
+        .hide {
+            display: block !important;
+        }
+
+        .view2 {
+            display: flex !important;
+        }
+
+        #menu {
+            background-color: transparent !important;
+            font-size: 150%;
+            color: white;
+            float: right;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            margin: 50px 0;
+        }
+
+        .content {
+            width: 20%;
+            margin: 15px;
+            box-sizing: border-box;
+            float: left;
+            text-align: center;
+            border-radius: 20px;
+            cursor: pointer;
+            padding-top: 10px;
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+            transition: .4s;
+            background: #f2f2f2;
+
+        }
+
+        .content:hover {
+            box-shadow: 0 3px 6px rgba(0, 0, 0, .16),
+                0 3px 6px rgba(0, 0, 0, .23);
+            transform: translate(0px, -8px);
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            margin: 0 auto;
+            display: block;
+        }
+
+        p {
+            text-align: center;
+            color: #b2bec3;
+            padding-top: 0 8px;
+        }
+
+        h6 {
+            font-size: 26px;
+            text-align: center;
+            color: #222f3e;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+
+        }
+
+        li {
+            padding: 5px;
+        }
+
+        .fa {
+            font-size: 26px;
+            transition: 0.4s;
+
+        }
+
+        .checked {
+            color: #ff9f43;
+        }
+
+        .fa:hover {
+            transform: scale(1.3);
+            transition: .6s;
+        }
+
+        button {
+            text-align: center;
+            font-size: 24px;
+            color: #fff;
+            width: 100%;
+            padding: 15px;
+            border: 0;
+            outline: none;
+            cursor: pointer;
+            margin-top: 5px;
+            border-bottom-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+
+        .buy-1 {
+            background: #690321;
+        }
+
+        .buy-2 {
+            background: rgb(0, 173, 173);
+        }
+
+        .buy-3 {
+            background: #0b0b0b;
+        }
+
+        .buy-4 {
+            background: #ff9f43;
+        }
+
+        .buy-5 {
+            background: #000000;
+        }
+
+        .buy-6 {
+            background: #83081f;
+        }
+
+        .buy-7 {
+            background: #000000;
+        }
+
+        .buy-8 {
+            background: #d19d00;
+        }
+
+        .buy-9 {
+            background: #035394;
+        }
+
+        .buy-10 {
+            background: #910210;
+        }
+
+        .buy-11 {
+            background: #049236;
+        }
+
+        .buy-12 {
+            background: #8f0294;
+        }
+
+        .buy-13 {
+            background: #ff9f43;
+        }
+
+        .buy-14 {
+            background: #01858f;
+        }
+
+        .buy-15 {
+            background: #590404;
+        }
+
+        .buy-16 {
+            background: #a1b002;
+        }
+
+        .buy-17 {
+            background: #0f0802;
+        }
+
+        .buy-18 {
+            background: #6d0264;
+        }
+
+        .buy-19 {
+            background: #019417;
+        }
+
+        .buy-20 {
+            background: #ff9f43;
+        }
+
+        .buy-21 {
+            background: #016072;
+        }
+
+        .buy-22 {
+            background: #a7048f;
+        }
+
+        .buy-23 {
+            background: #050201;
+        }
+
+        .buy-24 {
+            background: #922805;
+        }
+
+        .buy-25 {
+            background: #2a0378;
+        }
+
+        .buy-26 {
+            background: #ff9f43;
+        }
+
+        .buy-27 {
+            background: #017047;
+        }
+
+        .buy-28 {
+            background: #560202;
+        }
+
+        .buy-29 {
+            background: #96aa00;
+        }
+
+        .buy-30 {
+            background: #48028e;
+        }
+
+        .buy-31 {
+            background: #000000;
+        }
+
+        .buy-32 {
+            background: #0e3cb8;
+        }
+
+        .buy-33 {
+            background: #0e0c0b;
+        }
+
+        .buy-34 {
+            background: #03be1f;
+        }
+
+        .buy-35 {
+            background: #e22d2d;
+        }
+
+        .buy-36 {
+            background: #ff9f43;
+        }
+
+        .buy-37 {
+            background: #a8a39f;
+        }
+
+        .buy-38 {
+            background: #000000;
+        }
+
+        .buy-39 {
+            background: #9c9894;
+        }
+
+        .buy-40 {
+            background: #332dd6;
+        }
+
+        .buy-41 {
+            background: #b5b3b1;
+        }
+
+        .buy-42 {
+            background: #28acf3;
+        }
+
+        .buy-43 {
+            background: #4353ff;
+        }
+
+        .buy-44 {
+            background: #9d958d;
+        }
+
+        #about {
+            width: 100%;
+
+            padding: 10px 0px;
+
+            background-color: rgb(171, 6, 58);
+            text-align: center;
+            color: white;
+            font-size: 150%;
+
+            font-family: 'poppins', sans-serif;
+        }
+
+
+        @media(max-width:1000px) {
+            .content {
+                width: 45%;
+
+            }
+        }
+
+        @media(max-width:750px) {
+            .content {
+                width: 100%;
+            }
+        }
+
+        .end {
+    background:url(images/footer-bg.jpg) no-repeat;
+    background-size: cover;
+    width: 100%;
+    color: white !important;
+      padding: 100px;
+    margin: 12% 0 0 0;
+
+}
+
+.end-container {
+    margin: auto;
+    width: 60%;
+    gap: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.end-item {
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+}
+
+.end-tex {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+
+}
+
+.end-tex a {
+    margin-top: 25px;
+}
+.end-tex a:hover {
+    margin-top: 25px;
+    color:rgb(40, 217, 0);
+    transition: .4s !important;
+}
+
+.end-tex p {
+    font-size: medium;
+    line-height: 1.5;
+}
+
+.end-icons {
+    margin-top: 30px;
+    display: flex;
+}
+
+.end-icons i {
+    font-size: 25px;
+    margin-right: 15px;
+}
+
+.carbook2 {
+    font-weight: bolder;
+    font-size: larger;
+    color: white;
+}
+
+.carbook2 span {
+    color: rgb(40, 217, 0);
+}
+
+.end-item a {
+    color: white;
+    text-decoration: none;
+}
+
+.q {
+    display: flex;
+
+}
+
+.q i {
+    margin-right: 30px;
+}
+
+
+    </style>
+</head>
+
+<body>
+
+    <div class="nav">
+        <div class="container" >
+            <a href="index.html" class="read"> LET'S <span> READ</span></a>
+
+            <button onclick="view()" class="icon" id="menu" style="text-align:right;"><span>MENU</span></button>
+            <ul class="bar" id="Bar">
+                <li><a href="index.html " style="margin-right: 0;">HOME</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="books.html">BOOKS</a></li>
+                <li><a href="library.html">LIBRARY</a></li>
+                <li><a href="contact us.html">CONTACT US</a></li>
+
+            </ul>
+        </div>
+    </div>
+
+
+    <div id="about">
+        <h1>OUR BOOKS</h1>
+    </div>
+
+    <div class="gallery">
+
+
+        <div class="content">
+            <img src="images1/1.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$100.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-1">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/15.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$50.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-2">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/3.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$700.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-3">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/4.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$658.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-4">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/5.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$658.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-5">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/6.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$659.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-6">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/7.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$658.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-7">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/8.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$658.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-8">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/9.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$650.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-9">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/10.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$655.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-10">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/11.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$615.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-11">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/12.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$605.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-12">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/13.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$95.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-13">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/14.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$85.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-14">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/15.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$75.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-15">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/16.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$55.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-16">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/17.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$855.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-17">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/18.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$25.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-19">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/4.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$15.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-19">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/20.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$66.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-20">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/21.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$258.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-21">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/22.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$110.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-22">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/23.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$35.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-23">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/24.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$20.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-24">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/25.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$65.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-25">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/26.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$255.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-26">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/27.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$905.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-27">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/28.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$605.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-28">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/29.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$585.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-29">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/30.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$715.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-30">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/31.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$650.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-31">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/32.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$655.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-32">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/33.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$625.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-33">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/34.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$250.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-34">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/35.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$300.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-35">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/36.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$99.99</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-36">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/37.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$99.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-37">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/38.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$85.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-38">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/39.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$60.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-39">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/40.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$85.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-40">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/41.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$605.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-41">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/42.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$65.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-42">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/43.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$45.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-43">BUY NOW</button>
+        </div>
+
+        <div class="content">
+            <img src="images1/44.jpeg">
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h6>$85.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star checked"></i></li>
+                <li><i class="fa fa-star "></i></li>
+                <li><i class="fa fa-star "></i></li>
+            </ul>
+            <button class="buy-44">BUY NOW</button>
+        </div>
+
+
+    </div>
+
+
+    
+    <div class="end" style="text-align: left;">
+        <div class="end-container">
+            <div class="end-item">
+                <a href="" class="carbook2" style="margin: 20px 0 0 0;text-align: left;">FOLLOW <span> US</span></a>
+                <div style="margin: 15px 0 0  0; ">
+                    <img src="images/facebook.png" style="margin: 3px;cursor: pointer;width:35px; display: inline;height: 35px;">
+                    <img src="images/Twitter.png" style="margin: 3px;cursor: pointer;width:35px; display: inline;height: 35px;">
+                    <img src="images/linkedin.png" style="margin: 3px;cursor: pointer;width:35px;display: inline; height: 35px;">
+                    <img src="images/instagram.png" style="margin: 3px;cursor: pointer; width:35px;display: inline;height: 35px;">
+                </div>
+
+            </div>
+
+            <div class="end-item">
+                <p style="font-weight: bolder;
+                font-size: larger;color: white;text-align: left;">Information</p>
+                <div class="end-tex">
+                    <a href="" style="margin-top: 0;">About</a>
+                    <a href="">Services</a>
+                    <a href="">ramble in the library</a>
+                    <a href="">offers for new customers</a>
+                    <a href="">the best books</a>
+                </div>
+            </div>
+
+            <div class="end-item">
+                <p style="font-weight: bolder;
+              font-size: larger; color: white;text-align: left;">Have a Questions?</p>
+                <div class="end-tex">
+                    <div class="q">
+                        <a style="margin: 15px 0 0 0;" href=""> <i style="margin-top: 4px;"
+                                class="fa-solid fa-location-dot"></i>
+                        </a>
+                        <p style="color: white;text-align: left;">203 Fake St. Mountain View, San Francisco, California, USA</p>
+                    </div>
+                    <div class="q">
+                        <a style="margin: 0;" href=""> <i style="margin-top: 24px;" class="fa-solid fa-phone"></i>
+                        </a>
+                        <a href="">+2 392 3929 210</a>
+                    </div>
+                    <div class="q">
+                        <a style="margin: 0;" href=""> <i style="margin-top: 27px;"
+                                class="fa-solid fa-envelope"></i> </a>
+                        <a href="">info@yourdomain.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+    <script>
+        function view() {
+
+            var x = document.getElementById("Bar");
+            var t = document.getElementsByClassName("icon");
+            if (x.className === "bar") { x.className += " view2"; }
+            else { x.className = "bar"; }
+        }
+        function msg() {
+            alert("press on 'ABOUT US' in the main menu to know more about us");
+        }
+    </script>
+</body>
+
+</html>

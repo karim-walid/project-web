@@ -1,0 +1,1222 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <title>THE LIBRARY</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            margin: auto;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        #g {
+            background-image: url("images/about-bg.jpg");
+        }
+
+        * {
+            box-sizing: border-box;
+
+        }
+
+        :hover {
+            transition: .5s;
+        }
+
+        .container {
+            position: fixed;
+            width: 100%;
+            height: 10%;
+            background-color: rgba(0, 0, 0, .2);
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+
+
+
+        .nav ul {
+            list-style-type: none;
+            margin-right: 10%;
+
+
+        }
+
+        .nav li {
+            margin-right: 35px;
+            float: left;
+        }
+
+        .nav li a {
+            display: block;
+            color: white;
+            text-align: center;
+
+            text-decoration: none;
+
+
+            font-size: 150%;
+            font-family: 'poppins', sans-serif;
+        }
+
+        .bar a:hover {
+
+            color: rgb(31, 195, 42);
+        }
+
+        .bar a:active {
+            background-color: rgb(74, 46, 59);
+        }
+
+        .bar a {
+            font-size: large;
+        }
+
+        .read {
+            font-weight: bolder;
+            font-size: 150%;
+            margin-left: 10%;
+            text-decoration: none;
+            color: white;
+        }
+
+        .read span {
+            color: rgb(31, 195, 42);
+        }
+
+        .icon {
+            margin-right: 15%;
+            display: none;
+
+            border: none;
+        }
+
+        .icon:hover {
+            cursor: pointer;
+        }
+
+        @media screen and (max-width : 1100px) {
+            .nav ul {
+                background-color: rgba(0, 0, 0, .2) !important;
+                position: absolute;
+                width: 40%;
+                top: 100%;
+                right: 0px;
+                margin: 0;
+                padding: 0px;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                display: none;
+            }
+
+            .nav .bar li {
+                width: 100%;
+                padding: 20px;
+                display: block;
+
+            }
+
+            .icon {
+                display: block;
+            }
+
+            .container {
+
+                width: 100%;
+                height: 10%;
+                background-color: rgba(0, 0, 0, .2) !important;
+
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                z-index: 10;
+            }
+
+            #m {
+                display: none;
+            }
+        }
+
+
+        .hide {
+            display: block !important;
+        }
+
+        .view2 {
+            display: flex !important;
+        }
+
+        #menu {
+            background-color: transparent !important;
+            font-size: 150%;
+            color: white;
+        }
+
+        #b {
+            background-image: url(images/banner.jpg);
+            width: 100%;
+            height: 100%;
+            background-position: 75% 0px;
+            position: relative;
+
+        }
+
+        #c {
+            position: absolute;
+        }
+
+        #fbtn {
+            background-color: rgba(0, 0, 0, 0);
+            border: 3px white solid;
+            border-radius: 50px;
+
+
+            color: white;
+            padding: 16px 32px;
+            margin: 35px 0 0 20%;
+
+
+        }
+
+        #fbtn:hover {
+            background-color: black;
+            transition: .5s;
+            cursor: pointer;
+
+        }
+
+
+
+
+        #intro {
+            margin: 100px 100px 0px 100px;
+        }
+
+        #last {
+            margin: 40px 100px;
+        }
+
+        #page2 {
+
+            background-image: url("images/about-bg.jpg") !important;
+            height: 130%;
+
+        }
+
+
+        #about {
+            width: 100%;
+
+            padding: 10px 0px;
+
+            background-color: none;
+            text-align: center;
+            color: #b32137;
+            font-size: 150%;
+
+            font-family: 'poppins', sans-serif;
+        }
+
+        #b1 {
+            margin: 0px 10%;
+        }
+
+        #mid {
+            width: 70%;
+            margin: 30px 15% 120px;
+            height: 500px;
+            border: 3px #81256c solid;
+            border-radius: 35px;
+        }
+
+        #lbtn {
+            background-color: #81256c;
+            border: 3px white solid;
+            border-radius: 50px;
+            color: white;
+            padding: 16px 32px;
+            margin: 4px 2px;
+
+        }
+
+        #lbtn:hover {
+            background-color: #000000;
+
+            color: white;
+
+        }
+
+        #page3 {
+            margin: 0;
+            font-family: sans-serif;
+            background: #f2f2f2;
+        }
+
+
+        a {
+            text-decoration: none;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            margin: 50px 0;
+        }
+
+        .content {
+            width: 20%;
+            margin: 15px;
+            box-sizing: border-box;
+            float: left;
+            text-align: center;
+            border-radius: 20px;
+            cursor: pointer;
+            padding-top: 10px;
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+            transition: .4s;
+            background: #f2f2f2;
+
+        }
+
+        .content:hover {
+            box-shadow: 0 3px 6px rgba(0, 0, 0, .16),
+                0 3px 6px rgba(0, 0, 0, .23);
+            transform: translate(0px, -8px);
+        }
+
+        .imgaa {
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            margin: 0 auto;
+            display: block;
+        }
+
+        p {
+            text-align: center;
+            color: #000000;
+            padding-top: 0 8px;
+        }
+
+        h6 {
+            font-size: 26px;
+            text-align: center;
+            color: #222f3e;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+
+        }
+
+        li {
+            padding: 5px;
+        }
+
+        .fa {
+            font-size: 26px;
+            transition: 0.4s;
+
+        }
+
+        .checked {
+            color: #ff9f43;
+        }
+
+        .fa:hover {
+            transform: scale(1.3);
+            transition: .6s;
+        }
+
+        button {
+            text-align: center;
+            font-size: 24px;
+            color: #fff;
+            width: 100%;
+            padding: 15px;
+            border: 0;
+            outline: none;
+            cursor: pointer;
+            margin-top: 5px;
+            border-bottom-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+
+        .buy-1 {
+            background: #690321;
+        }
+
+        .buy-2 {
+            background: rgb(0, 173, 173);
+        }
+
+        .buy-3 {
+            background: #513b3b;
+        }
+
+        .buy-4 {
+            background: #ff9f43;
+        }
+
+        .buy-5 {
+            background: #838383;
+        }
+
+        .buy-6 {
+            background: #83081f;
+        }
+
+        .buy-7 {
+            background: #000000;
+        }
+
+        .buy-8 {
+            background: #d19d00;
+        }
+
+        .buy-9 {
+            background: #035394;
+        }
+
+        .buy-10 {
+            background: #910210;
+        }
+
+        .buy-11 {
+            background: #049236;
+        }
+
+        .buy-12 {
+            background: #8f0294;
+        }
+
+        .buy-13 {
+            background: #ff9f43;
+        }
+
+        .buy-14 {
+            background: #01858f;
+        }
+
+        .buy-15 {
+            background: #590404;
+        }
+
+        .buy-16 {
+            background: #a1b002;
+        }
+
+
+
+        @media(max-width:1000px) {
+            .content {
+                width: 45%;
+
+            }
+        }
+
+        @media(max-width:750px) {
+            .content {
+                width: 100%;
+            }
+        }
+
+
+        #page4 {
+            margin: 0px;
+            background-color: #ffffff;
+        }
+
+        #b1 {
+            margin: 0px 10%;
+        }
+
+        #lbtn1 {
+            background-color: #81256c;
+            border: 3px white solid;
+            border-radius: 50px;
+            color: white;
+            padding: 20px 3%;
+            margin: 20px 43%;
+
+
+        }
+
+        #lbtn1:hover {
+            background-color: #000000;
+
+            color: white;
+
+        }
+
+        #page5 {
+            margin: 0px;
+            background-color: #282727;
+            height: 130%;
+
+        }
+
+        .center {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            border-radius: 50px;
+            color: rgb(0, 0, 0);
+        }
+
+        .center h1 {
+            text-align: center;
+            padding: 0 0 20px 0;
+            color: gold;
+            border-bottom: 1px solid rgb(255, 255, 255);
+        }
+
+        .center form {
+            padding: 0 40px;
+            box-sizing: border-box;
+        }
+
+        form .txt_field {
+            position: relative;
+            border-bottom: 2px solid #ffffff;
+            margin: 30px 0;
+        }
+
+        .txt_field input {
+            padding: 0 5px;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 16px 0;
+            border: 0;
+            background: rgb(255, 255, 255);
+            padding: 20px 40px;
+            outline: none;
+            color: rgb(0, 0, 0);
+            transition: 0.5s;
+        }
+
+        .txt_field input:focus {
+            box-shadow: 0 0 10px 4px #c90000;
+        }
+
+        .menu,
+        label {
+            display: flex;
+            box-sizing: border-box;
+            padding: 0 5px;
+            margin: 16px 0;
+            border: 0;
+            transition: 0.5s;
+            outline: none;
+            color: rgb(255, 255, 255);
+            background: rgb(0, 0, 0);
+            border-radius: 20px;
+        }
+
+        .menu,
+        label {
+            box-shadow: 0 0 10px 4px #c90000;
+        }
+
+        .sub {
+            background: rgb(171, 6, 58);
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            border: 2px solid transparent;
+            font-weight: bold;
+            padding: 13px 30px;
+            border-radius: 30px;
+            transition: 0.4s;
+        }
+
+        .sub:hover {
+            background: transparent;
+            border: 2px solid #ffffff;
+            color: white;
+            cursor: pointer;
+        }
+
+        .pass {
+            margin: -5px 0 20px 5px;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        .pass:hover {
+            text-decoration: underline;
+        }
+
+        .sign_up_link {
+            margin: 30px 0;
+            text-align: center;
+            font-size: 16px;
+            color: #ffffff;
+        }
+
+        .sign_up_link a {
+            color: #2691d9;
+            text-decoration: none;
+        }
+
+        .sign_up_link a:hover {
+            text-decoration: underline;
+        }
+
+        #phonediv {
+            color: white;
+        }
+
+        #passworddiv {
+            color: white;
+        }
+
+
+        #about2 {
+            width: 100%;
+
+            padding: 10px 0px;
+
+            background-color: rgb(171, 6, 58);
+            text-align: center;
+            color: white;
+            font-size: 150%;
+
+            font-family: 'poppins', sans-serif;
+        }
+
+        .end {
+            background: url(images/footer-bg.jpg) no-repeat;
+            background-size: cover;
+            width: 100%;
+            color: white !important;
+            padding: 100px;
+            margin: 0;
+        }
+
+        .end-container {
+            margin: auto;
+            width: 60%;
+            gap: 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        }
+
+        .end-item {
+            display: flex;
+            flex-direction: column;
+            font-size: large;
+        }
+
+        .end-tex {
+            display: flex;
+            flex-direction: column;
+            margin-top: 30px;
+
+        }
+
+        .end-tex a {
+            margin-top: 25px;
+        }
+
+        .end-tex a:hover {
+            margin-top: 25px;
+            color: rgb(40, 217, 0);
+            transition: .4s !important;
+        }
+
+        .end-tex p {
+            font-size: medium;
+            line-height: 1.5;
+        }
+
+        .end-icons {
+            margin-top: 30px;
+            display: flex;
+        }
+
+        .end-icons i {
+            font-size: 25px;
+            margin-right: 15px;
+        }
+
+        .carbook2 {
+            font-weight: bolder;
+            font-size: larger;
+            color: white;
+        }
+
+        .carbook2 span {
+            color: rgb(40, 217, 0);
+        }
+
+        .end-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .q {
+            display: flex;
+
+        }
+
+        .q i {
+            margin-right: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="g">
+        <div class="nav">
+            <div class="container">
+                <a href="index.html" class="read"> LET'S <span> READ</span></a>
+
+                <button onclick="view()" class="icon" id="menu" style="text-align:right;"><span>MENU</span></button>
+                <ul class="bar" id="Bar">
+                    <li><a href="index.html " style="margin-right: 0;">HOME</a></li>
+                    <li><a href="about.html">ABOUT US</a></li>
+                    <li><a href="books.html">BOOKS</a></li>
+                    <li><a href="library.html">LIBRARY</a></li>
+                    <li><a href="contact us.html">CONTACT US</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+
+
+
+        <div id="b">
+            <div id="c">
+                <h1 style="color: white; margin: 10% 0 0 10%; font-size: 300%;  ">The Best Libraries That<br>
+                    Every Book Lover Must<br>
+                    Visit!</h1>
+                <p style="font-size: 150%; color: white; margin: 0 50% 0  10%; ">adipiscing elit, sed do eiusmod tempor
+                    incididunt ut
+                    labore et dolore magna aliqua. Ut enim ad minim
+                    veniam, <span id="m">quis nostrud exercitation is a long established fact that a reader will be
+                        distracted by
+                        the readable content of a page when looking at its layout. The point of using Lorem Ipsum is
+                        that it
+                        has a more-or-less normal distribution</span></p>
+                <form style="width: 50%;">
+                    <input type="button" onclick="msg()" value="Read More" id="fbtn" style="font-size:200% ;">
+                </form>
+                <div style="margin: 0 0 0 10%; position: absolute;">
+                    <img src="images/facebook.png" style="margin: 5px;cursor: pointer;">
+                    <img src="images/Twitter.png" style="margin: 5px;cursor: pointer;">
+                    <img src="images/linkedin.png" style="margin: 5px;cursor: pointer;">
+                    <img src="images/instagram.png" style="margin: 5px;cursor: pointer;">
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+    <div id="page4">
+
+        <div id="about">
+            <h1 style="font: 50px  Arial, Helvetica, sans-serif;"><b>OUR <span
+                        style="color: #000000; ">LIBRARY</span></b></h1>
+        </div>
+
+        <div id="b1">
+            <p style="font-size:200% ;">adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                exercitation ullamco laboris</p>
+
+        </div>
+
+        <div style="width: 100%; background-color: #81256c; position: relative;">
+            <img src="images/Library-.jpg" style="width: 60%; height: 90%; margin: 4% 15% 0  20%;">
+
+            <div style="width: 100%; background-color: white; position: absolute;">
+                <form>
+                    <input type="button" onclick="msg()" value="Read More" id="lbtn1" style="font-size:150% ;">
+                </form>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+    <div id="page3">
+        <div id="about" style="margin: 10% 0 0 0;">
+            <h1 style="font: 50px  Arial, Helvetica, sans-serif;"><b>SOME <span
+                        style="color: #000000; ">BOOKS</span></b></h1>
+        </div>
+
+        <div class="gallery">
+
+
+            <div class="content">
+                <img src="images1/1.jpeg" class="imgaa">
+
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <h6>$100.00</h6>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star "></i></li>
+                </ul>
+                <button class="buy-1">BUY NOW</button>
+            </div>
+
+            <div class="content">
+                <img src="images1/15.jpeg" class="imgaa">
+
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <h6>$50.00</h6>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star "></i></li>
+                    <li><i class="fa fa-star "></i></li>
+                </ul>
+                <button class="buy-2">BUY NOW</button>
+            </div>
+
+            <div class="content">
+                <img src="images1/3.jpeg" class="imgaa">
+
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <h6>$700.00</h6>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star "></i></li>
+                </ul>
+                <button class="buy-3">BUY NOW</button>
+            </div>
+
+            <div class="content">
+                <img src="images1/4.jpeg" class="imgaa">
+
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <h6>$658.00</h6>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star "></i></li>
+                </ul>
+                <button class="buy-4">BUY NOW</button>
+            </div>
+
+            <div class="content">
+                <img src="images1/5.jpeg" class="imgaa">
+
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <h6>$658.00</h6>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star "></i></li>
+                    <li><i class="fa fa-star "></i></li>
+                </ul>
+                <button class="buy-5">BUY NOW</button>
+            </div>
+
+            <div class="content">
+                <img src="images1/6.jpeg" class="imgaa">
+
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <h6>$659.00</h6>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star "></i></li>
+                </ul>
+                <button class="buy-6">BUY NOW</button>
+            </div>
+
+            <div class="content">
+                <img src="images1/7.jpeg" class="imgaa">
+
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <h6>$658.00</h6>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star "></i></li>
+                    <li><i class="fa fa-star "></i></li>
+                </ul>
+                <button class="buy-7">BUY NOW</button>
+            </div>
+
+            <div class="content">
+                <img src="images1/8.jpeg" class="imgaa">
+
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <h6>$658.00</h6>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star "></i></li>
+                </ul>
+                <button class="buy-8">BUY NOW</button>
+            </div>
+
+            <div class="content">
+                <img src="images1/9.jpeg" class="imgaa">
+
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <h6>$650.00</h6>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star "></i></li>
+                    <li><i class="fa fa-star "></i></li>
+                </ul>
+                <button class="buy-9">BUY NOW</button>
+            </div>
+
+            <div class="content">
+                <img src="images1/10.jpeg" class="imgaa">
+
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <h6>$655.00</h6>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star "></i></li>
+                </ul>
+                <button class="buy-10">BUY NOW</button>
+            </div>
+
+            <div class="content">
+                <img src="images1/11.jpeg" class="imgaa">
+
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <h6>$615.00</h6>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star "></i></li>
+                    <li><i class="fa fa-star "></i></li>
+                </ul>
+                <button class="buy-11">BUY NOW</button>
+            </div>
+
+            <div class="content">
+                <img src="images1/12.jpeg" class="imgaa">
+
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <h6>$605.00</h6>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star "></i></li>
+                </ul>
+                <button class="buy-12">BUY NOW</button>
+            </div>
+
+            <div class="content">
+                <img src="images1/13.jpeg" class="imgaa">
+
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <h6>$95.00</h6>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star "></i></li>
+                </ul>
+                <button class="buy-13">BUY NOW</button>
+            </div>
+
+            <div class="content">
+                <img src="images1/14.jpeg" class="imgaa">
+
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <h6>$85.00</h6>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star "></i></li>
+                    <li><i class="fa fa-star "></i></li>
+                </ul>
+                <button class="buy-14">BUY NOW</button>
+            </div>
+
+            <div class="content">
+                <img src="images1/29.jpeg" class="imgaa">
+
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <h6>$75.00</h6>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star "></i></li>
+                </ul>
+                <button class="buy-15">BUY NOW</button>
+            </div>
+
+            <div class="content">
+                <img src="images1/16.jpeg" class="imgaa">
+
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <h6>$55.00</h6>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star "></i></li>
+                    <li><i class="fa fa-star "></i></li>
+                </ul>
+                <button class="buy-16">BUY NOW</button>
+            </div>
+
+
+        </div>
+
+        <div id="page5" style="position: relative;">
+            <div id="about2">
+                <h1>CONTACT US</h1>
+            </div>
+
+
+
+
+            <div class="center" style="position: absolute;">
+                <h1>Login</h1>
+                <form action="#" method="post" id="form">
+                    <div class="txt_field">
+                        <div class="firstname">
+                            <input type="text" name="firstname" placeholder="First Name" required>
+                        </div>
+                        <div class="lastname">
+                            <input type="text" name="lastname" placeholder="Last Name" required>
+                        </div>
+                        <div class="email">
+                            <input type="email" name="mail" placeholder="Email" required>
+                        </div>
+                        <div class="mobile">
+                            <input type="text" name="phonenumber" placeholder="Mobile" required id="phone">
+                        </div>
+                        <div id="phonediv"></div>
+                        <div class="address">
+                            <input type="text" name="address" placeholder="Address" required>
+                        </div>
+                        <div>
+                            <input type="password" name="password" placeholder="Password" id="password" required>
+                        </div>
+                        <div id="passworddiv"></div>
+                        <div class="menu">
+                            <input type="radio" name="Gender" value="Male"><label>Male</label>
+                            <input type="radio" name="Gender" value="Female"><label>Female</label>
+                        </div>
+                    </div>
+                    <div class="pass">Forget Password ?</div>
+                    <input type="submit" value="SEND" class="sub">
+                    <div class="sign_up_link">
+                        Not a member <a href="#">Sign_Up</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="end">
+            <div class="end-container">
+                <div class="end-item">
+                    <a href="" class="carbook2" style="margin: 20px 0 0 0;">FOLLOW <span> US</span></a>
+                    <div style="margin: 15px 0 0  0; ">
+                        <img src="images/facebook.png" style="margin: 3px;cursor: pointer;width:35px; ">
+                        <img src="images/Twitter.png" style="margin: 3px;cursor: pointer;width:35px; ">
+                        <img src="images/linkedin.png" style="margin: 3px;cursor: pointer;width:35px; ">
+                        <img src="images/instagram.png" style="margin: 3px;cursor: pointer; width:35px;">
+                    </div>
+
+                </div>
+
+                <div class="end-item">
+                    <p style="font-weight: bolder;
+                    font-size: larger;color: white;">Information</p>
+                    <div class="end-tex">
+                        <a href="" style="margin-top: 0;">About</a>
+                        <a href="">Services</a>
+                        <a href="">ramble in the library</a>
+                        <a href="">offers for new customers</a>
+                        <a href="">the best books</a>
+                    </div>
+                </div>
+
+                <div class="end-item">
+                    <p style="font-weight: bolder;
+                  font-size: larger; color: white;">Have a Questions?</p>
+                    <div class="end-tex">
+                        <div class="q">
+                            <a style="margin: 15px 0 0 0;" href=""> <i style="margin-top: 4px;"
+                                    class="fa-solid fa-location-dot"></i>
+                            </a>
+                            <p style="color: white;">203 Fake St. Mountain View, San Francisco, California, USA</p>
+                        </div>
+                        <div class="q">
+                            <a style="margin: 0;" href=""> <i style="margin-top: 24px;" class="fa-solid fa-phone"></i>
+                            </a>
+                            <a href="">+2 392 3929 210</a>
+                        </div>
+                        <div class="q">
+                            <a style="margin: 0;" href=""> <i style="margin-top: 27px;"
+                                    class="fa-solid fa-envelope"></i> </a>
+                            <a href="">info@yourdomain.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+
+        
+
+        <script>
+            function view() {
+
+                var x = document.getElementById("Bar");
+                var t = document.getElementsByClassName("icon");
+                if (x.className === "bar") { x.className += " view2"; }
+                else { x.className = "bar"; }
+            }
+            function msg() {
+                alert("press on 'ABOUT US' in the main menu to know more about us");
+            }
+
+
+
+            // starting register form validation password
+            let form = document.getElementById("form");
+            let password = document.getElementById("password");
+            let passworddiv = document.getElementById("passworddiv");
+            let error = document.createElement("span");
+            //************** */
+            let phone = document.getElementById("phone");
+            let pherror = document.createElement("span");
+            let phonediv = document.getElementById("phonediv");
+            pherror.setAttribute("id", "pherrorspan");
+            pherror.textContent = "mobile number must be only 11 digits not include any characters";
+            //**************
+
+            error.setAttribute("id", "errorspan");
+            error.textContent = "The password must start with uppercase character,include 8 characters,atleast one digit,one special character"
+            form.addEventListener("submit", function (action) {
+                let submit = 0;
+                let validP = true;
+                password = password.value.split("");
+                let numbers = 0, special = 0, whitespace = 0;
+                for (let i = 0; i < password.length; i++) {
+                    if (password[i] == " ")
+                        whitespace++;
+                    else if (isNaN(password[i]) == true) {
+                        if (password[i] == "-" || password[i] == "_" || password[i] == "#" || password[i] == "&" || password[i] == "*" || password[i] == "@")
+                            special++;
+                    }
+                    else if (isNaN(password[i]) == false) {
+                        numbers++;
+                    }
+
+
+                }
+                let cap = 0
+                if (password[0] != password[0].toUpperCase()) {
+                    cap++;
+                }
+                // *********************
+                let phonevalid = true;
+                for (let i = 0; i < phone.value.length; i++) {
+                    if (isNaN(phone.value[i]) == true)
+                        phonevalid = false;
+                }
+                //*********************** */
+                if ((cap != 0) || (numbers == 0) || (document.getElementById("password").value.length != 8) || (whitespace != 0) || (special > 1 || special < 1)) {
+                    validP = false;
+                }
+                if (phonevalid == false || phone.value.length != 11) {
+                    action.preventDefault();
+                    phonediv.appendChild(pherror);
+                    phone.onfocus = function () {
+                        document.getElementById("pherrorspan").remove();
+                        phone.value == " ";
+                    }
+
+                }
+                if (validP == false) {
+                    action.preventDefault();
+                    passworddiv.appendChild(error);
+                    document.getElementById("password").onfocus = function () {
+                        document.getElementById("errorspan").remove();
+                        document.getElementById("password").value = "";
+
+                    }
+
+                }
+
+
+            })
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,440 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/all.min.css">
+  <title>THE LIBRARY</title>
+  <style>
+    body {
+      margin: 0px;
+      background: url("images/about-bg.jpg") no-repeat;
+      background-size: cover;
+    }
+
+    * {
+      box-sizing: border-box;
+
+    }
+
+    :hover {
+      transition: .5s;
+    }
+
+    .container {
+
+      width: 100%;
+      height: 10%;
+      background-color: rgba(0, 0, 0, 1);
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+
+
+    .nav ul {
+      list-style-type: none;
+      margin-right: 10%;
+
+
+    }
+
+    .nav li {
+      margin-right: 35px;
+      float: left;
+    }
+
+    .nav li a {
+      display: block;
+      color: white;
+      text-align: center;
+
+      text-decoration: none;
+
+
+      font-size: 150%;
+      font-family: 'poppins', sans-serif;
+    }
+
+    .bar a:hover {
+
+      color: rgb(31, 195, 42);
+    }
+
+    .bar a:active {
+      background-color: rgb(74, 46, 59);
+    }
+
+    .bar a {
+      font-size: large;
+    }
+
+    .read {
+      font-weight: bolder;
+      font-size: 150%;
+      margin-left: 10%;
+      text-decoration: none;
+      color: white;
+    }
+
+    .read span {
+      color: rgb(31, 195, 42);
+    }
+
+    .icon {
+      margin-right: 15%;
+      display: none;
+
+      border: none;
+    }
+
+    .icon:hover {
+      cursor: pointer;
+    }
+
+    @media screen and (max-width : 1100px) {
+      .nav ul {
+        background-color: rgba(0, 0, 0, .2) !important;
+        position: absolute;
+        width: 40%;
+        top: 100%;
+        right: 0px;
+        margin: 0;
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        display: none;
+      }
+
+      .nav .bar li {
+        width: 100%;
+        padding: 20px;
+        display: block;
+
+      }
+
+      .icon {
+        display: block;
+      }
+
+      .container {
+        position: fixed !important;
+        width: 100%;
+        height: 10%;
+        background-color: rgba(0, 0, 0, .2) !important;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 10;
+      }
+    }
+
+    @media screen and (max-width : 1250px) {
+      #mid {
+        display: flex;
+        flex-direction: column;
+
+
+      }
+
+      #photo {
+
+        float: left !important;
+        width: 50% !important;
+
+      }
+
+      #text {
+        width: 90% !important;
+        font-size: 150% !important;
+        margin: 5% !important;
+      }
+
+      #b1 {
+        font-size: 100% !important;
+      }
+    }
+
+    @media screen and (max-width : 600px) {
+      #mid {
+        display: flex;
+        flex-direction: column;
+        width: 100% !important;
+        margin: 0 0 120px 0 !important;
+
+      }
+
+      #photo {
+
+        float: left !important;
+        width: 50% !important;
+
+      }
+
+      #text {
+        width: 90% !important;
+        font-size: 100% !important;
+        margin: 5% !important;
+      }
+
+      #b1 {
+        font-size: 70% !important;
+      }
+    }
+
+
+    .hide {
+      display: block !important;
+    }
+
+    .view2 {
+      display: flex !important;
+    }
+
+    #menu {
+      background-color: transparent !important;
+      font-size: 150%;
+      color: white;
+    }
+
+    #about {
+      width: 100%;
+
+      padding: 10px 0px;
+
+      background-color: rgb(171, 6, 58);
+      text-align: center;
+      color: white;
+      font-size: 150%;
+
+      font-family: 'poppins', sans-serif;
+    }
+
+    #b1 {
+      margin: 0px 10%;
+    }
+
+    #mid {
+      width: 70%;
+      margin: 30px 15% 120px;
+      border: 3px #81256c solid;
+      border-radius: 35px;
+    }
+
+    #lbtn {
+      background-color: #81256c;
+      border: 3px white solid;
+      border-radius: 50px;
+      color: white;
+      padding: 16px 32px;
+      margin: 4px 2px;
+
+    }
+
+    #lbtn:hover {
+      background-color: #000000;
+      border: 3px white solid;
+      border-radius: 50px;
+      color: white;
+      padding: 16px 32px;
+      margin: 4px 2px;
+
+    }
+
+    .end {
+      background: url(images/footer-bg.jpg) no-repeat;
+      background-size: cover;
+      width: 100%;
+      color: white !important;
+      padding: 100px;
+      margin: 12% 0 0 0;
+    }
+
+    .end-container {
+      margin: auto;
+      width: 60%;
+      gap: 50px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .end-item {
+      display: flex;
+      flex-direction: column;
+      font-size: large;
+    }
+
+    .end-tex {
+      display: flex;
+      flex-direction: column;
+      margin-top: 30px;
+
+    }
+
+    .end-tex a {
+      margin-top: 25px;
+    }
+
+    .end-tex a:hover {
+      margin-top: 25px;
+      color: rgb(40, 217, 0);
+      transition: .4s !important;
+    }
+
+    .end-tex p {
+      font-size: medium;
+      line-height: 1.5;
+    }
+
+    .end-icons {
+      margin-top: 30px;
+      display: flex;
+    }
+
+    .end-icons i {
+      font-size: 25px;
+      margin-right: 15px;
+    }
+
+    .carbook2 {
+      font-weight: bolder;
+      font-size: larger;
+      color: white;
+    }
+
+    .carbook2 span {
+      color: rgb(40, 217, 0);
+    }
+
+    .end-item a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .q {
+      display: flex;
+
+    }
+
+    .q i {
+      margin-right: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav">
+    <div class="container">
+      <a href="index.html" class="read"> LET'S <span> READ</span></a>
+
+      <button onclick="view()" class="icon" id="menu"><span>MENU</span></button>
+      <ul class="bar" id="Bar">
+        <li><a href="index.html " style="margin-right: 0;">HOME</a></li>
+        <li><a href="about.html">ABOUT US</a></li>
+        <li><a href="books.html">BOOKS</a></li>
+        <li><a href="library.html">LIBRARY</a></li>
+        <li><a href="contact us.html">CONTACT US</a></li>
+
+      </ul>
+    </div>
+  </div>
+
+  <div id="about">
+    <h1>ABOUT US</h1>
+  </div>
+  <div id="b1">
+    <p style="font-size:200% ;">adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+      dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+      exercitation ullamco laboris</p>
+
+  </div>
+  <div id="mid" style="box-sizing: border-box;">
+
+    <div><img src="images/about.png" id="photo" style="width: 30%; height:400px; float: right; margin: 2%;"></div>
+    <div style="width: 55%;  font-size: 170%;margin:0 0 0 60px; " id="text">
+      <p>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+        dolor in reprehenderit in voluptate velit esse cillum dolore consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+        dolore</p>
+      <form>
+        <input type="button" onclick="msg()" value="Read More" id="lbtn" style="font-size:100% ;">
+      </form>
+
+    </div>
+  </div>
+
+
+    <div class="end">
+      <div class="end-container">
+        <div class="end-item">
+          <a href="" class="carbook2" style="margin: 20px 0 0 0;">FOLLOW <span> US</span></a>
+          <div style="margin: 15px 0 0  0; ">
+            <img src="images/facebook.png" style="margin: 3px;cursor: pointer;width:35px; ">
+            <img src="images/Twitter.png" style="margin: 3px;cursor: pointer;width:35px; ">
+            <img src="images/linkedin.png" style="margin: 3px;cursor: pointer;width:35px; ">
+            <img src="images/instagram.png" style="margin: 3px;cursor: pointer; width:35px;">
+          </div>
+
+        </div>
+
+        <div class="end-item">
+          <p style="font-weight: bolder;
+                  font-size: larger;">Information</p>
+          <div class="end-tex">
+            <a href="" style="margin-top: 0;">About</a>
+            <a href="">Services</a>
+            <a href="">ramble in the library</a>
+            <a href="">offers for new customers</a>
+            <a href="">the best books</a>
+          </div>
+        </div>
+
+        <div class="end-item">
+          <p style="font-weight: bolder;
+                font-size: larger;">Have a Questions?</p>
+          <div class="end-tex">
+            <div class="q">
+              <a style="margin: 15px 0 0 0;" href=""> <i style="margin-top: 4px;" class="fa-solid fa-location-dot"></i>
+              </a>
+              <p>203 Fake St. Mountain View, San Francisco, California, USA</p>
+            </div>
+            <div class="q">
+              <a style="margin: 0;" href=""> <i style="margin-top: 24px;" class="fa-solid fa-phone"></i>
+              </a>
+              <a href="">+2 392 3929 210</a>
+            </div>
+            <div class="q">
+              <a style="margin: 0;" href=""> <i style="margin-top: 27px;" class="fa-solid fa-envelope"></i> </a>
+              <a href="">info@yourdomain.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <script>
+      function view() {
+
+        var x = document.getElementById("Bar");
+        var t = document.getElementsByClassName("icon");
+        if (x.className === "bar") { x.className += " view2"; }
+        else { x.className = "bar"; }
+      }
+      function msg() {
+        alert("press on 'ABOUT US' in the main menu to know more about us");
+      }
+    </script>
+</body>
+
+</html>
